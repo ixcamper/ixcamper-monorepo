@@ -57,6 +57,12 @@
             "options": {
                 "targetName": "lint"
             }
+        },
+        {
+            "plugin": "@jnxplus/nx-gradle",
+            "options": {
+                "rootProjectName": "ixcamper-monorepo"
+            }
         }
     ],
     "generators": {
