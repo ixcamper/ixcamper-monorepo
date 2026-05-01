@@ -2,7 +2,17 @@
     "name": "@ixcamper-monorepo/source",
     "version": "0.0.0",
     "license": "MIT",
-    "scripts": {},
+    "scripts": {
+        "nx": "nx",
+        "start:ui": "nx serve frontend",
+        "build:ui": "nx build frontend",
+        "test:ui": "nx test frontend",
+        "lint:ui": "nx lint frontend",
+        "start:server": "./gradlew --stop && nx serve backend",
+        "build:server": "nx build backend",
+        "test:server": "nx test backend",
+        "lint:server": "nx lint backend"
+    },
     "private": true,
     "dependencies": {
         "@angular/common": "~21.2.0",

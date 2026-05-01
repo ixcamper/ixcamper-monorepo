@@ -17,7 +17,7 @@ import { IWelcome } from '@ixcamper-monorepo/shared';
     encapsulation: ViewEncapsulation.None,
 })
 export class NxWelcome implements OnInit {
-    message = signal('Loading...');
+    message = signal('Loading..');
     private http = inject(HttpClient);
 
     ngOnInit() {
