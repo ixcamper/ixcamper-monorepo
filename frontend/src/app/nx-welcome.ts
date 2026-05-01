@@ -8,6 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { IWelcome } from '@ixcamper-monorepo/shared';
+import { environment } from '../environments/environment';
 
 @Component({
     selector: 'app-nx-welcome',
@@ -22,7 +23,7 @@ export class NxWelcome implements OnInit {
 
     ngOnInit() {
         this.http
-            .get<IWelcome>('/api/welcome')
+            .get<IWelcome>(`${environment.apiUrl}/welcome`)
             .subscribe((response: IWelcome) => {
                 this.message.set(response.message);
             });
