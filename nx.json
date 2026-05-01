@@ -6,7 +6,8 @@
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.mjs"
+      "!{projectRoot}/eslint.config.mjs",
+      "!{projectRoot}/src/test/**/*"
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
@@ -30,6 +31,18 @@
     "@angular/build:unit-test": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
+  "projects": {
+    "spring-petclinic": {
+      "root": "spring-petclinic",
+      "projectType": "application",
+      "targets": {}
     }
   },
   "plugins": [
@@ -43,6 +56,12 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@jnxplus/nx-gradle",
+      "options": {
+        "rootProjectName": "ixcamper-monorepo"
       }
     }
   ],
