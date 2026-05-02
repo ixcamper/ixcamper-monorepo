@@ -8,8 +8,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { IWelcome } from '@ixcamper-monorepo/shared';
-import { environment } from './app.config';
-
 @Component({
     selector: 'app-nx-welcome',
     imports: [CommonModule],
@@ -20,10 +18,10 @@ import { environment } from './app.config';
 export class NxWelcome implements OnInit {
     message = signal('Loading..');
     private http = inject(HttpClient);
-
+    private readonly baseUrl = API_URL;
     ngOnInit() {
         this.http
-            .get<IWelcome>(`${environment.apiUrl}/welcome`)
+            .get<IWelcome>(`${this.baseUrl}/welcome`)
             .subscribe((response: IWelcome) => {
                 this.message.set(response.message);
             });

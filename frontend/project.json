@@ -22,7 +22,7 @@
                 ],
                 "styles": ["frontend/src/styles.scss"],
                 "define": {
-                    "process.env.API_URL": "'api'"
+                    "API_URL": "'https://ixcamper-monorepo-production.up.railway.app/api'"
                 }
             },
             "configurations": {
@@ -39,10 +39,7 @@
                             "maximumError": "8kb"
                         }
                     ],
-                    "outputHashing": "all",
-                    "define": {
-                        "process.env.API_URL": "'https://ixcamper-monorepo-production.up.railway.app/api'"
-                    }
+                    "outputHashing": "all"
                 },
                 "development": {
                     "optimization": false,
@@ -57,7 +54,10 @@
             "executor": "@angular/build:dev-server",
             "options": {
                 "proxyConfig": "frontend/proxy.conf.json",
-                "buildTarget": "frontend:build"
+                "buildTarget": "frontend:build",
+                "define": {
+                    "API_URL": "'api'"
+                }
             },
             "configurations": {
                 "production": {
