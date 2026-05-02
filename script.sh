@@ -1,0 +1,1 @@
+node -e "f='nx.json';n=JSON.parse(fs.readFileSync(f));n.plugins=n.plugins.filter(p=>(p.plugin||p)!=='@jnxplus/nx-gradle');fs.writeFileSync(f,JSON.stringify(n))" && ./node_modules/.bin/nx reset && ./node_modules/.bin/nx build frontend --configuration=production

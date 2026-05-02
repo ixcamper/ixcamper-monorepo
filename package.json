@@ -6,6 +6,7 @@
         "nx": "nx",
         "start:ui": "nx serve frontend",
         "build:ui": "nx build frontend",
+        "build:ui:production": "sh script.sh",
         "test:ui": "nx test frontend",
         "lint:ui": "nx lint frontend",
         "start:server": "./gradlew --stop && nx serve backend",
