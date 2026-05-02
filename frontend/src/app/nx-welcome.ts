@@ -8,7 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { IWelcome } from '@ixcamper-monorepo/shared';
-import { environment } from '../environments/environment';
+import { environment } from './app.config';
 
 @Component({
     selector: 'app-nx-welcome',
