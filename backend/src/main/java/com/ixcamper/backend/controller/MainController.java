@@ -1,4 +1,4 @@
-package com.ixcamper.backend;
+package com.ixcamper.backend.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class HelloController {
+public class MainController {
 
   @GetMapping("/welcome")
   public Map<String, String> welcome() {
     Map<String, String> res = new HashMap<>();
-    res.put("message", "Hello World!");
+    res.put("message", "Hello World! MonoRep");
     return res;
   }
 }
