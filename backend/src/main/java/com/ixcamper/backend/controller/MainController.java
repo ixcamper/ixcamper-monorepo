@@ -13,7 +13,7 @@ public class MainController {
   @GetMapping("/welcome")
   public Map<String, String> welcome() {
     Map<String, String> res = new HashMap<>();
-    res.put("message", "Hello World! MonoRep");
+    res.put("message", "Hello World! MonoRepo");
     return res;
   }
 }
